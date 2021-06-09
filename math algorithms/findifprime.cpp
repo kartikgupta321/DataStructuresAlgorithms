@@ -4,8 +4,8 @@
 using namespace std;
 void prime(int n){
     int root=sqrt(n);
-    git working good now
-    
+    // git working good now
+
     
 
 
