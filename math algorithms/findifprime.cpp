@@ -1,14 +1,15 @@
 #include<iostream>
 #include<conio.h>
-#include<vector>
+#include<math.h>
 using namespace std;
-void rockandlever(int a[]){
+void prime(int n){
+    int root=sqrt(n);
     
+    
+
+
+
+
 
 
 }
-
-    
-    
-
-    
