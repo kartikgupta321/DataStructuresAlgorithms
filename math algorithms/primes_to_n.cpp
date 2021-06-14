@@ -22,5 +22,5 @@ void sieveoferastosthenes(int n){
     }
 }
 int main(){
-    sieveoferastosthenes(15);
+    sieveoferastosthenes(10);
 }
