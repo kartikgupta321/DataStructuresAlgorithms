@@ -1,4 +1,4 @@
-#include<iostream>
+#include<iostream> //Bucket sort is useful when the input is uniformly distributed over a range
 #include<conio.h>
 #include<array>
 using namespace std;
