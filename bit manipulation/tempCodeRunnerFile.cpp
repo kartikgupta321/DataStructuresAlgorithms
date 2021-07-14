@@ -1,9 +1,14 @@
- 1; i <= n; i++){
-    //     res=(3*(i)+2);
-    //     if(res%4==0){
-    //         continue;
-    //     }
-    //     for (int j = 0; j < n+count; j++){
-    //         cout<<res<<endl;
-    //     }
-    // }
+
+        // for (int j = 0; msbc[j];j++){
+        //     if (m.find(msbc[j]) == m.end()){
+        //         m[msbc[j]]=1;
+        //         cout<<"ok";
+        //     }
+        //     else
+        //         m[msbc[j]]++;
+        //         cout<<"ok";
+        //     }
+        // for (auto& it:m ){
+        //     cout<<it.first<<" "
+        //         <<it.second<<"\n";
+        // }

@@ -1,16 +1,16 @@
 #include<iostream>
-#include<conio.h>
-#include<math.h>
+
 using namespace std;
-void prime(int n){
-    int root=sqrt(n);
-    // git working good now
 
-    
-
-
-
-
-
-
+bool ifprime(int n){
+    if(n<=0)
+        return false;
+    for (int i = 2; i*i <=n ; i++){
+        if(n%i==0)
+            return false;
+    }
+    return true;
+}
+int main(){
+    cout<<ifprime(7);
 }
