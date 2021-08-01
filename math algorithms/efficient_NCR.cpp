@@ -1,13 +1,13 @@
 #include<iostream>
 #include<algorithm>
 using namespace std;
-int gcd(int a,int b){
+long long gcd(long long a,long long b){
     if (a==0)
         return b;
     return gcd(b%a,a);
 }
-void printncr(int n, int r){
-    unsigned long long p=1,k=1;
+void printncr(long long n, long long r){
+    long long p=1,k=1;
     if (n-r<r){
         r=n-r;
     }
@@ -15,7 +15,7 @@ void printncr(int n, int r){
         while (r){
             p*=n;
             k*=r;
-            int m=gcd(p,k);
+            long long m=gcd(p,k);
             // int m=__gcd(p,k);
             p/=m;
             k/=m;

@@ -2,10 +2,10 @@
 
 using namespace std;
 
-bool ifprime(int n){
+bool ifprime(long long n){
     if(n<=0)
         return false;
-    for (int i = 2; i*i <=n ; i++){
+    for (long long i = 2; i*i <=n ; i++){
         if(n%i==0)
             return false;
     }
