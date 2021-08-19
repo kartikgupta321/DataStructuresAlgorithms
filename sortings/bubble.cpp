@@ -3,7 +3,7 @@
 #include<array>
 using namespace std;
 int main(){
-    int arr[]={5,4,3,2,1};
+    int arr[]={1,2,3,4,5};
     int n=sizeof(arr)/sizeof(arr[1]);
     while (n>0){
         int count=0;

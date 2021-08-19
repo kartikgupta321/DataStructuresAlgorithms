@@ -2,7 +2,7 @@
 #include<conio.h>
 using namespace std;
 int main(){
-    int arr[]={-9,5,4,3,20,1};
+    int arr[]={-9,5,4,3,20,100};
     int n=sizeof(arr)/sizeof(arr[1]);
     while (n>1){
         int l=0;
