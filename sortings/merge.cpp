@@ -53,7 +53,7 @@ void printArray(int A[],int size){
     }
 }
 int main(){
-    int arr[]={12, 11, 13, 5,-6,0,0,0,0};
+    int arr[]={12, 11, 13, 5,-6};
     int n=sizeof(arr)/sizeof(arr[1]);
     cout<<"given array- \n";
     printArray(arr,n);

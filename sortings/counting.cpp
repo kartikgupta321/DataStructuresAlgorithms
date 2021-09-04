@@ -18,11 +18,9 @@ int main(){
             i=i+1;
             continue;
         }
-        cout<<i;
+        cout<<i<<" ";
         a[i]-=1;
         s-=1;
     }
-    
-
     return 0;
 }
