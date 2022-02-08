@@ -9,15 +9,12 @@ int findPeakElement(vector<int>& nums) {
         return nums.size()-1;
     }
     int left=0,right = nums.size()-1,pivot;
-    while (left<=right && (pivot != 0 || pivot != nums.size()-1)) {
+    while (left<right ) {
         pivot= left + (right-left)/2;
-        if(nums.at(pivot) > nums.at(pivot-1) && nums.at(pivot) > nums.at(pivot+1)){
-            return pivot;
-        } 
-        else if( nums.at(pivot) < nums.at(pivot-1)) right = pivot-1;
-        else left =pivot+1;
+        if(nums.at(pivot) > nums.at(pivot+1)) right =pivot;
+        else left = pivot +1;
     }
-    return -1;
+    return left;
 }
 int main(){
     vector<int> nums{3,4,3,2,1};
