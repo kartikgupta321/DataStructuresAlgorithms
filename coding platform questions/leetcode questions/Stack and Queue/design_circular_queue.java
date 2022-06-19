@@ -1,88 +1,57 @@
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class design_circular_queue {
     public static void main(String[] args) {
         MyCircularQueue q = new MyCircularQueue(5);
-        q.enQueue(5);
-        q.enQueue(4);
-        q.enQueue(3);
+        System.out.println(q.Front()+" " +q.Rear());
+        q.enQueue(1);
         q.enQueue(2);
-        // System.out.println(q.isEmpty());
-        // System.out.println(q.isFull());
-        // System.out.println(q.Front());
-        // System.out.println(q.Rear());
-        System.out.println(q.head.value);
+        q.enQueue(3);
+        q.enQueue(4);
+        q.enQueue(5);
+        System.out.println(q.Front()+" " +q.Rear());
+        q.deQueue();
+        System.out.println(q.Front()+" " +q.Rear());
     }
 }
 class MyCircularQueue {
-    class Node{
-        int value;
-        Node next;
-        Node(int value,Node next){
-            value = this.value;
-            next = this.next;
-        }
-    }
-    public Node head;
-    int count =0;
-    int size;
+    int[] arr;
+    int front=0,tail=-1,len=0;
 
     public MyCircularQueue(int k) {
-        size = k;
-        
+            arr = new int[k];
     }
     
     public boolean enQueue(int value) {
-        if(count==size) return false;
-        else if(head==null) head = new Node(value, null);
-        else{
-            Node last = head;
-            while (last.next!=null) {
-                last = last.next;
-            }
-            last.next = new Node(value, null);
+        if(!isFull()){
+            tail = (tail+1)% arr.length;
+            arr[tail] = value;
+            len++;
+            return true;
         }
-        count++;
-        return true;
+        return false;
     }
     
     public boolean deQueue() {
-        if(count==0) return false;
-        else if(head.next == null) head.next =null;
-        else{
-            Node last = head;
-            while (last.next.next!=null) {
-                last = last.next;
-            }
-            last.next = null;
-        }   
-        count--;
-        return true;
-        
+        if(!isEmpty()){
+            front = (front+1)% arr.length;
+            len--;
+            return true;
+        }
+        return false;
     }
     
     public int Front() {
-        if(head==null) return -1;
-        return head.value;
+        return isEmpty() ? -1 : arr[front];
     }
     
     public int Rear() {
-        if(head==null) return -1;
-        Node last= head;
-        while (last.next!=null) {
-            last = last.next;
-        }
-        return last.value;
+        return isEmpty() ? -1 : arr[tail];
     }
     
     public boolean isEmpty() {
-        if(head==null) return true;
-        return false;
+        return len ==0;
     }
     
     public boolean isFull() {
-        if(count==size) return true;
-        return false;
+        return len == arr.length;
     }
 }

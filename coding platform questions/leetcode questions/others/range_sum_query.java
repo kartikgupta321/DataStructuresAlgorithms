@@ -1,23 +1,23 @@
 public class range_sum_query {
     public static void main(String[] args) {
-        int[][] matrix ={{3, 0, 1, 4, 2},{5, 6, 3, 2, 1},{1, 2, 0, 1, 5},{4, 1, 0, 1, 7},{1, 0, 3, 0, 5}};
-        NumMatrix obj = new NumMatrix(matrix);
-        System.out.println(obj.sumRegion(2, 1, 4, 3));
+        int[] nums = { -2, 0, 3, -5, 2, -1};
+        NumArray obj = new NumArray(nums);
+        System.out.println(obj.sumRange(0, 2));
+        System.out.println(obj.sumRange(2, 5));
+        System.out.println(obj.sumRange(0, 5));
     }
 }
-class NumMatrix {
-    int[][] arr;
-    public NumMatrix(int[][] matrix) {
-        arr = matrix;
-    }
-    
-    public int sumRegion(int row1, int col1, int row2, int col2) {
-        int sum =0;
-        for (int i = row1; i <= row2; i++) {
-            for (int j = col1; j <= col2; j++) {
-                sum += arr[i][j];
-            }
+class NumArray {
+    int [] arr;
+    public NumArray(int[] nums) {
+        arr = nums;
+        for (int i = 1; i < arr.length; i++) {
+            System.out.print(arr[i]);
+            arr[i] += arr[i-1];
         }
-        return sum;
+    }
+    public int sumRange(int left, int right) {
+        if(left==0) return arr[right];
+        return arr[right] - arr[left-1];
     }
 }
