@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class N_queens {
@@ -17,6 +19,17 @@ public class N_queens {
 }
 class Solution {
     public List<List<String>> solveNQueens(int n) {
+        List<List<String>> result = new ArrayList<List<String>>();
         
+        return result;
+    }
+    private void helper(List<List<String>> result,List<String> board, int row,boolean[] cols,boolean[] d1,boolean[] d2,int n){
+        if(row == n) result.add(new ArrayList<String>(board));
+
+        for (int col = 0; col < n; col++) {
+            int id1 = col-row + n;
+            int id2 = col + row;
+
+        }
     }
 }
