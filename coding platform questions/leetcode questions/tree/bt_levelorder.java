@@ -28,7 +28,7 @@ class Solution {
         if(root==null) return list;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        while (queue.size() != 0) {
+        while (!queue.isEmpty()) {
             int qlen = queue.size();
             List<Integer> row = new ArrayList<>();
             for (int i = 0; i < qlen; i++) {
