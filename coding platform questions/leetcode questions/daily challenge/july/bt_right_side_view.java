@@ -2,8 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-public class Bt_Right_View {
+public class bt_right_side_view {
     public static void main(String[] args) {
         TreeNode p = new TreeNode(1);
         p.left = new TreeNode(2);
