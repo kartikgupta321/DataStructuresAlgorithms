@@ -2,7 +2,7 @@
 #include<cctype>
 using namespace std;
 int main(){
-    char a='i';
+    char a='p';
     int x=a^(1<<5);
     cout<<char(x);
 
