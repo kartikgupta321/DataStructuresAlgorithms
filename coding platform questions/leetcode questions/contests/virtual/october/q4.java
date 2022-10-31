@@ -1,4 +1,3 @@
-import java.util.HashMap;
 public class q4 {
     public static void main(String[] args) {
         Solution obj = new Solution();
@@ -12,23 +11,31 @@ public class q4 {
 }
 class Solution {
     public int[] sumPrefixScores(String[] words) {
-        int [] ans = new int[words.length];
-        HashMap<String,Integer> map = new HashMap<>();
-        for (int i = 0; i < words.length; i++) {
-            int count = 0;
-            for (int j = 0; j < words[i].length(); j++) {
-                if(map.containsKey(words[i].substring(0, j+1))==true) count = map.get(words[i].substring(0, j+1));
-                else{
-                    for (int j2 = 0; j2 < words.length; j2++) {
-                        if(words[j2].length()>j){
-                            if(words[i].substring(0, j+1).equals(words[j2].substring(0, j+1)) ==true) count++;
-                        }
-                    }
-                }
-                map.put(words[i].substring(0, j+1),count );
+        Trie trie = new Trie();
+        int[] ans = new int[words.length];
+        int k = 0;
+        for (String x : words) {
+            Trie t = trie;
+            for (int i = 0; i < x.length(); i++) {
+                int c = x.charAt(i) - 'a';
+                if(t.ch[c]==null) t.ch[c] = new Trie();
+                t.ch[c].visited++;
+                t = t.ch[c];
             }
-            ans[i] = count;
+        }
+        for (String x : words) {
+            Trie t = trie; int curr = 0,i=0;
+            for ( ; i < x.length(); i++) {
+                int c = x.charAt(i) - 'a';
+                curr += t.ch[c].visited;
+                t = t.ch[c];
+            }
+            ans[k++] = curr;
         }
         return ans;
     }
+}
+class Trie{
+    Trie[] ch = new Trie[26];
+    int visited = 0;
 }
