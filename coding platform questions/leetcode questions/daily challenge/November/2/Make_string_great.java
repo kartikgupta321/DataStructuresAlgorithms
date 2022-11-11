@@ -10,10 +10,10 @@ class Solution {
         StringBuilder str = new StringBuilder(s);
         for (int i = 0; i < s.length()-1; i++) {
             if(s.charAt(i) == Character.toLowerCase(s.charAt(i+1)) ){
-                str.delete(i, i+2);
+                str.delete(i, i+1);
             }    
             else if(s.charAt(i) == Character.toUpperCase(s.charAt(i+1))){
-                str.delete(i, i+2);
+                str.delete(i, i+1);
             }
         }
         return str.toString();
